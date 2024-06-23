@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webdite design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+<body>
+    
+    <header>
+        <a href="home.php" class="brand">Deccan Discovery</a>
+        <div class="menu-btn"></div>
+        <div class="navgation">
+            <div class="navigation-items">
+                <a href="home.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="packages.php">Packages</a>
+                <a href="book.php">Book</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="design/adventure.mp4" autoplay muted loop></video>
+        <video class="video-slide " src="design/tour_guide.mp4" autoplay muted loop></video>
+        <video class="video-slide " src="design/trekking.mp4" autoplay muted loop></video>
+        <video class="video-slide " src="design/camping.mp4" autoplay muted loop></video>
+
+        <div class="content active">
+            <h1>Adventure<br><span>off-road</span></h1>
+            <p>Embark on thrilling adventures with our travel experiences, perfect for those seeking excitement and discovery. Trek the Himalayas, dive the Great Barrier Reef, or explore wild landscapes with expert guides. Our packages offer the perfect mix of adrenaline and awe. Unleash your inner explorer and book your adventure today!</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content ">
+            <h1>Tour Guide.<br><span>relax</span></h1>
+            <p>Explore the world with our expert tour guides who bring destinations to life. From ancient ruins to vibrant cities, enjoy a hassle-free, immersive experience with their local insights and insider tips. Discover hidden gems and authentic adventures that go beyond typical tourism. Book now for an unforgettable journey! </p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content ">
+            <h1>Trekking<br><span>feel nature</span></h1>
+            <p>Experience thrilling treks with our expertly guided trips for all skill levels. Traverse stunning landscapes, from lush forests to towering mountains, and gain rich insights into nature and local cultures. Whether you seek a challenging climb or a leisurely hike, our trekking packages offer unforgettable adventures. Lace up and discover breathtaking trails with us!</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content ">
+            <h1>Camping<br><span>enjoy</span></h1>
+            <p>Immerse yourself in nature with our exceptional camping experiences. Enjoy scenic spots, campfires, and starry nights, with expert guides ensuring a safe and comfortable adventure. Whether you're a seasoned camper or a first-timer, our packages offer everything for a memorable outdoor escape. Pack your gear and join us for an unforgettable camping adventure!</p>
+            <a href="#">Read more</a>
+        </div>
+        
+        
+        
+
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        const menuBtn=document.querySelector(".menu-btn");
+        menuBtn.addEventListener("click",()=> {
+            menuBtn.classList.toggle("active");
+        });
+
+        const btns=document.querySelectorAll(".nav-btn");
+        const slides=document.querySelectorAll(".video-slide");
+        const contents=document.querySelectorAll(".content")
+
+        var sliderNav=function(manual){
+
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            });
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+            });
+            contents.forEach((content)=>{
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+        btns.forEach((btn,i)=>{
+            btn.addEventListener("click",()=> {
+                sliderNav(i);
+            });
+        });
+    </script>
+    
+</body>
+</html>
